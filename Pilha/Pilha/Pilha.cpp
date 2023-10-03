@@ -1,3 +1,4 @@
+// Pietro Fortunato de Camargo Corrêa
 #include <iostream>
 using namespace std;
 
@@ -88,11 +89,32 @@ void push()
 	novo->prox = NULL;
 
 
+	if (topo == NULL) {
+		topo = novo;
+		novo->prox = NULL;
+		cout << "Numero adicionado" << endl;
+	}
+	else {
+		novo->prox = topo;
+		topo = novo;
+		cout << "Numero adicionado com sucesso" << endl;
+
+	}
+
 }
 
 void pop()
 {
+	NO* aux = topo;
 
+	if (topo == NULL) {
+		cout << "Pilha vazia" << endl;
+	}
+	else {
+		topo = topo->prox;
+		cout << "Elemento deletado " << aux->valor << endl;
+		free(aux);
+	}
 	
 
 }
